@@ -40,7 +40,7 @@ This is where we'll store the structured output from our AI analysis.
 4. **Partition Key:** This is the unique identifier for each item. Enter `review_id`. For the type, leave it as **String**.
 5. **Leave all other settings as default** and click **Create table**.
 
-![DynamoDB Table Creation](Pasted image 20250619150637.png)
+![DynamoDB Table Creation](https://raw.githubusercontent.com/EhmkeiLabs/The-Sentiment-Detective/main/Pasted%20image%2020250619150637.png)
 
 ### **Step 4: Create the IAM Role for Lambda**
 
@@ -57,7 +57,7 @@ Our Lambda function needs more permissions this time: access to S3, Bedrock, and
 5. **Name the Role:** Give it a descriptive name like `SentimentDetective-Lambda-Role`.
 6. **Create role**.
 
-![IAM Role Creation](Pasted image 20250619150737.png)
+![IAM Role Creation](https://raw.githubusercontent.com/EhmkeiLabs/The-Sentiment-Detective/main/Pasted%20image%2020250619150737.png)
 
 ### **Step 5: Create the Lambda Function**
 
@@ -116,7 +116,7 @@ Python: lambda_function.py
     - **Suffix (Recommended):** Enter `.txt` to ensure it only processes text files.
     - Acknowledge the recursive invocation warning and click **Add**.
 
-![S3 Trigger Configuration](Pasted image 20250619150949.png)
+![S3 Trigger Configuration](https://raw.githubusercontent.com/EhmkeiLabs/The-Sentiment-Detective/main/Pasted%20image%2020250619150949.png)
 
 ### **You're Ready to Test!**
 
@@ -127,6 +127,6 @@ Python: lambda_function.py
 2. **Upload these files** to the S3 bucket you configured as the trigger.
 3. **Check DynamoDB:** Navigate to your `sentiment-analysis-results` table in the DynamoDB console. Click **Explore table items**. You should see new entries for each review, complete with the original text and the AI-generated sentiment, topics, and urgency level.
 
-![DynamoDB Results](Pasted image 20250619151146.png)
+![DynamoDB Results](https://raw.githubusercontent.com/EhmkeiLabs/The-Sentiment-Detective/main/Pasted%20image%2020250619151146.png)
 
 You have now built a powerful, automated system for understanding customer feedback at scale!
